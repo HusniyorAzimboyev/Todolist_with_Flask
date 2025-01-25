@@ -37,7 +37,7 @@ table th {
 table tr:nth-child(even) {
     background-color: #f2f2f2;
 }
-.add_task {
+.post_task{
     width: 60%;
     margin: 20px auto;
     text-align: center;
@@ -47,7 +47,7 @@ table tr:nth-child(even) {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.add_task input[type="text"] {
+.post_task input[type="text"] {
     width: 70%;
     padding: 12px;
     margin: 10px;
@@ -57,14 +57,14 @@ table tr:nth-child(even) {
     transition: all 0.3s ease;
 }
 
-.add_task input[type="text"]:hover,
-.add_task input[type="text"]:focus {
+.post_task input[type="text"]:hover,
+.post_task input[type="text"]:focus {
     background: #fff;
     box-shadow: 0 0 10px rgba(45, 27, 61, 0.5);
     transform: scale(1.02);
 }
 
-.add_task input[type="submit"] {
+.post_task input[type="submit"] {
     padding: 12px 24px;
     background: #2d1b3d;
     color: white;
@@ -74,7 +74,7 @@ table tr:nth-child(even) {
     transition: all 0.3s ease;
 }
 
-.add_task input[type="submit"]:hover {
+.post_task input[type="submit"]:hover {
     background: #1a1a2e;
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);

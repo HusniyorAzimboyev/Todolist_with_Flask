@@ -46,6 +46,19 @@ def delete_task(id):
         return redirect('/')
     except:
         return "There was error deleting this task"
+@app.route('/update/<int:id>',methods=["post","get"])
+def update_task(id):
+    task = Todo.query.get_or_404(id)
+    if request.method=="POST":
+        task.content = request.form["content"]
+        try:
+            db.session.commit()
+            return redirect('/')
+        except:
+            return "There was an error updating that task"
+    else:
+        return render_template("update_task.html",task=task)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
