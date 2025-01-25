@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <h1 class="header">Task manager</h1>
+
+    <table border="2">
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for obj in objects %}
+        <tr>
+            <td>{{obj.content}}</td>
+            <td>{{obj.date_created}}</td>
+            <td>
+                <a href="#">Delete</a>
+                <br>
+                <a href="">Update</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+    <p>{{errors}}</p>
+    <form action="/" method="post" class="add_task"> 
+        <input type="text" class="content" name="content" placeholder="Enter task here">
+        <input type="submit" value="Add task">
+    </form>
+{% endblock %}
