@@ -15,7 +15,7 @@
         {% for obj in objects %}
         <tr>
             <td>{{obj.content}}</td>
-            <td>{{obj.date_created}}</td>
+            <td>{{obj.date_created.date()}}</td>
             <td>
                 <a href="#">Delete</a>
                 <br>
