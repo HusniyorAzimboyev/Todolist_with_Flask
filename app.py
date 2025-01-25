@@ -36,7 +36,16 @@ def index():
             return 'There was an issue adding your task'
     else:
         tasks = Todo.query.order_by(desc("date_created")).all()
-        return render_template('index.html', objects=tasks)
+        return render_template('index.html', tasks=tasks)
+@app.route('/delete/<int:id>',methods=['post',"get"])
+def delete_task(id):
+    deletable_task = Todo.query.get_or_404(id)
+    try:
+        db.session.delete(deletable_task)
+        db.session.commit()
+        return redirect('/')
+    except:
+        return "There was error deleting this task"
 
 if __name__ == "__main__":
     app.run(debug=True)
